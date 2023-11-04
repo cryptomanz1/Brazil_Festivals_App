@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.material.Button
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Share
@@ -89,8 +90,9 @@ fun FestivalsScreen() {
         content = {
             LazyVerticalGrid(
                 columns = GridCells.Fixed(1),
-                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 70.dp)
+                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 70.dp),
             ) {
+
                 items(TestData.testItemsList) { image ->
                     Column(
                         modifier = Modifier
@@ -100,20 +102,30 @@ fun FestivalsScreen() {
                         AsyncImage(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .height(300.dp),  // Укажите желаемую высоту
-                            contentScale = ContentScale.Crop,  // Измените по необходимости
+                                .height(300.dp),
+                            contentScale = ContentScale.Crop,
                             model = image.url,
                             contentDescription = ""
                         )
                         Text(
-                            text = "Rio de Jeneiro Festival",  // Используйте нужное поле из объекта TestData
+                            text = "Rio de Jeneiro Festival",
                             modifier = Modifier
                                 .padding(top = 10.dp)
                                 .fillMaxWidth(),
                             textAlign = TextAlign.Center,
-                            color = Color.Black,  // Укажите желаемый цвет
-                            fontSize = 16.sp  // Укажите желаемый размер шрифта
+                            color = Color.Black,
+                            fontSize = 16.sp
                         )
+                        WebViewComponent(url = "https://frukifyleb.com")
+                        Button(
+                            onClick = {
+                            },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp)
+                        ) {
+                            Text(text = "Apply", color = Color.Yellow)
+                        }
                     }
                 }
             }
