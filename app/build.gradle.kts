@@ -52,8 +52,11 @@ android {
 dependencies {
 
     implementation("androidx.navigation:navigation-compose:2.7.5")
+    implementation ("androidx.activity:activity-compose:1.3.1")
+    implementation("androidx.media3:media3-common:1.1.1")
 
-    val compose_version = "1.0.5"
+
+    val compose_version = "1.0.7"
     implementation ("androidx.compose.ui:ui:$compose_version")
     implementation ("androidx.compose.ui:ui-tooling:$compose_version")
     implementation ("androidx.compose.material:material:$compose_version")
